@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D2DF0D21D0BBB53001FEFD4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2DF0D11D0BBB53001FEFD4 /* Default-568h@2x.png */; };
+		7DACF3D81D0BA9CF003A73DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACF3D71D0BA9CF003A73DC /* AppDelegate.swift */; };
+		7DACF3DD1D0BA9CF003A73DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DACF3DB1D0BA9CF003A73DC /* Main.storyboard */; };
+		7DACF3DF1D0BA9CF003A73DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DACF3DE1D0BA9CF003A73DC /* Assets.xcassets */; };
+		7DACF3E21D0BA9CF003A73DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DACF3E01D0BA9CF003A73DC /* LaunchScreen.storyboard */; };
+		7DACF3EA1D0BACFD003A73DC /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACF3E91D0BACFD003A73DC /* BeerTableViewController.swift */; };
+		7DACF3EC1D0BAF6A003A73DC /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACF3EB1D0BAF6A003A73DC /* Beer.swift */; };
+		EAE3F6F38748C78D442D729D /* Pods_AveryBrewing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DB3B8C23B613D8302625F2 /* Pods_AveryBrewing.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D2DF0D11D0BBB53001FEFD4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7DACF3D41D0BA9CF003A73DC /* AveryBrewing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AveryBrewing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DACF3D71D0BA9CF003A73DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DACF3DC1D0BA9CF003A73DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DACF3DE1D0BA9CF003A73DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DACF3E11D0BA9CF003A73DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DACF3E31D0BA9CF003A73DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DACF3E91D0BACFD003A73DC /* BeerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
+		7DACF3EB1D0BAF6A003A73DC /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		B80E5B5E073CF08DC227FD00 /* Pods-AveryBrewing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AveryBrewing.release.xcconfig"; path = "Pods/Target Support Files/Pods-AveryBrewing/Pods-AveryBrewing.release.xcconfig"; sourceTree = "<group>"; };
+		C8DB3B8C23B613D8302625F2 /* Pods_AveryBrewing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AveryBrewing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3BF35EB16A772D701D52C00 /* Pods-AveryBrewing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AveryBrewing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AveryBrewing/Pods-AveryBrewing.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DACF3D11D0BA9CF003A73DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE3F6F38748C78D442D729D /* Pods_AveryBrewing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		616F2D179FEC9D89924390AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3BF35EB16A772D701D52C00 /* Pods-AveryBrewing.debug.xcconfig */,
+				B80E5B5E073CF08DC227FD00 /* Pods-AveryBrewing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DACF3CB1D0BA9CF003A73DC = {
+			isa = PBXGroup;
+			children = (
+				7D2DF0D11D0BBB53001FEFD4 /* Default-568h@2x.png */,
+				7DACF3D61D0BA9CF003A73DC /* AveryBrewing */,
+				7DACF3D51D0BA9CF003A73DC /* Products */,
+				616F2D179FEC9D89924390AF /* Pods */,
+				93BA7E97A7E303A5698A650E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7DACF3D51D0BA9CF003A73DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DACF3D41D0BA9CF003A73DC /* AveryBrewing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DACF3D61D0BA9CF003A73DC /* AveryBrewing */ = {
+			isa = PBXGroup;
+			children = (
+				7DACF3D71D0BA9CF003A73DC /* AppDelegate.swift */,
+				7DACF3E91D0BACFD003A73DC /* BeerTableViewController.swift */,
+				7DACF3EB1D0BAF6A003A73DC /* Beer.swift */,
+				7DACF3DB1D0BA9CF003A73DC /* Main.storyboard */,
+				7DACF3DE1D0BA9CF003A73DC /* Assets.xcassets */,
+				7DACF3E01D0BA9CF003A73DC /* LaunchScreen.storyboard */,
+				7DACF3E31D0BA9CF003A73DC /* Info.plist */,
+			);
+			path = AveryBrewing;
+			sourceTree = "<group>";
+		};
+		93BA7E97A7E303A5698A650E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8DB3B8C23B613D8302625F2 /* Pods_AveryBrewing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DACF3D31D0BA9CF003A73DC /* AveryBrewing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DACF3E61D0BA9CF003A73DC /* Build configuration list for PBXNativeTarget "AveryBrewing" */;
+			buildPhases = (
+				B0887A7022AC971E9E200FAB /* [CP] Check Pods Manifest.lock */,
+				7DACF3D01D0BA9CF003A73DC /* Sources */,
+				7DACF3D11D0BA9CF003A73DC /* Frameworks */,
+				7DACF3D21D0BA9CF003A73DC /* Resources */,
+				A182D20C1E8C909BF660755D /* [CP] Embed Pods Frameworks */,
+				9805C1DF76054ACDF8AD8922 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AveryBrewing;
+			productName = AveryBrewing;
+			productReference = 7DACF3D41D0BA9CF003A73DC /* AveryBrewing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DACF3CC1D0BA9CF003A73DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "cocoa touch porter";
+				TargetAttributes = {
+					7DACF3D31D0BA9CF003A73DC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7DACF3CF1D0BA9CF003A73DC /* Build configuration list for PBXProject "AveryBrewing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DACF3CB1D0BA9CF003A73DC;
+			productRefGroup = 7DACF3D51D0BA9CF003A73DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DACF3D31D0BA9CF003A73DC /* AveryBrewing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DACF3D21D0BA9CF003A73DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DACF3E21D0BA9CF003A73DC /* LaunchScreen.storyboard in Resources */,
+				7D2DF0D21D0BBB53001FEFD4 /* Default-568h@2x.png in Resources */,
+				7DACF3DF1D0BA9CF003A73DC /* Assets.xcassets in Resources */,
+				7DACF3DD1D0BA9CF003A73DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9805C1DF76054ACDF8AD8922 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AveryBrewing/Pods-AveryBrewing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A182D20C1E8C909BF660755D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AveryBrewing/Pods-AveryBrewing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0887A7022AC971E9E200FAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DACF3D01D0BA9CF003A73DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DACF3D81D0BA9CF003A73DC /* AppDelegate.swift in Sources */,
+				7DACF3EC1D0BAF6A003A73DC /* Beer.swift in Sources */,
+				7DACF3EA1D0BACFD003A73DC /* BeerTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7DACF3DB1D0BA9CF003A73DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DACF3DC1D0BA9CF003A73DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7DACF3E01D0BA9CF003A73DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DACF3E11D0BA9CF003A73DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DACF3E41D0BA9CF003A73DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DACF3E51D0BA9CF003A73DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DACF3E71D0BA9CF003A73DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3BF35EB16A772D701D52C00 /* Pods-AveryBrewing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AveryBrewing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ctp.AveryBrewing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7DACF3E81D0BA9CF003A73DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80E5B5E073CF08DC227FD00 /* Pods-AveryBrewing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AveryBrewing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ctp.AveryBrewing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DACF3CF1D0BA9CF003A73DC /* Build configuration list for PBXProject "AveryBrewing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DACF3E41D0BA9CF003A73DC /* Debug */,
+				7DACF3E51D0BA9CF003A73DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DACF3E61D0BA9CF003A73DC /* Build configuration list for PBXNativeTarget "AveryBrewing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DACF3E71D0BA9CF003A73DC /* Debug */,
+				7DACF3E81D0BA9CF003A73DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DACF3CC1D0BA9CF003A73DC /* Project object */;
+}

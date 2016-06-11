@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fbH-UW-EXC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Avery Brewing Co.-->
+        <scene sceneID="7fO-sD-qp4">
+            <objects>
+                <tableViewController id="ZOq-dX-9BZ" customClass="BeerTableViewController" customModule="AveryBrewing" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfH-At-8Dm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="133" id="fEg-pM-fq5">
+                                <rect key="frame" x="0.0" y="92" width="600" height="133"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEg-pM-fq5" id="gQQ-mQ-VTk">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="132"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F0M-md-OvI">
+                                            <rect key="frame" x="8" y="8" width="114" height="116"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="114" id="Gqa-F7-8px"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="F0M-md-OvI" firstAttribute="bottom" secondItem="gQQ-mQ-VTk" secondAttribute="bottomMargin" id="Hs1-hq-A3p"/>
+                                        <constraint firstItem="F0M-md-OvI" firstAttribute="leading" secondItem="gQQ-mQ-VTk" secondAttribute="leadingMargin" id="a3x-if-qDf"/>
+                                        <constraint firstItem="F0M-md-OvI" firstAttribute="top" secondItem="gQQ-mQ-VTk" secondAttribute="topMargin" id="zSd-Js-acD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZOq-dX-9BZ" id="fGF-rz-1yC"/>
+                            <outlet property="delegate" destination="ZOq-dX-9BZ" id="cGe-kX-dBd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Avery Brewing Co." id="cGQ-Fo-wqo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FdX-1s-Dk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RXs-ks-U1N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbH-UW-EXC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qro-Wp-uiW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZOq-dX-9BZ" kind="relationship" relationship="rootViewController" id="Qlw-P1-edE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HU4-Wh-4as" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="305"/>
+        </scene>
+    </scenes>
+</document>
