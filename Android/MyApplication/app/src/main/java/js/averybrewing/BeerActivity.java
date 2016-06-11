@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class BeerActivity extends AppCompatActivity {
+public class BeerActivity extends Activity {
 
 
     @Override

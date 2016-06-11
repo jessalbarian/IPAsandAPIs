@@ -8,10 +8,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Avery Brewing Co."
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity" />
+
         <activity
             android:name=".SplashPage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -21,7 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BeerActivity" />
+
+
+        <activity android:name=".BeerActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

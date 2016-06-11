@@ -1,10 +1,10 @@
 package js.averybrewing;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +17,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 abv.setTextColor(Color.parseColor("#000000"));
 
                 //add formatting
-                abv.setPadding(50, 0, 0, 100);
+                abv.setPadding(50, 0, 0, 150);
                 name.setPadding(50, 0, 0, 0);
                 style.setPadding(50, 0, 0, 0);
 
