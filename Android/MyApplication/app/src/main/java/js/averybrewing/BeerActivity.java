@@ -1,12 +1,34 @@
 package js.averybrewing;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class BeerActivity extends Activity {
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        //inflate menu to add items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //get the ID of the item on the action bar that was clicked
+        switch (item.getItemId()){
+            case R.id.events:
+                //start event activity
+                Intent intent = new Intent(BeerActivity.this, EventActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
     @Override

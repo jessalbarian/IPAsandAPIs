@@ -11,9 +11,7 @@
         android:label="Avery Brewing Co."
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity" />
-
         <activity
             android:name=".SplashPage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -23,10 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".BeerActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".BeerActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".EventActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -30,7 +30,7 @@ public abstract class URLDataDownload extends AsyncTask<String, String, Void> {
      * before data is processed
      */
     protected void onPreExecute() {
-        progressDialog.setMessage("Getting beer info...");
+        progressDialog.setMessage("Getting info...");
         progressDialog.show();
         progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
