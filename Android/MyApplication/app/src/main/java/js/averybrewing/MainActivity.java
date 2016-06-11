@@ -1,8 +1,10 @@
 package js.averybrewing;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -37,92 +39,79 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray jArray = new JSONArray(result);
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject beer = jArray.getJSONObject(i);
-//                    createSmall(beer);
+                    createBeer(beer);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             // Test: prints entire JSON
-            TextView messageView = new TextView(MainActivity.this);
-            messageView.setText(result);
-            LinearLayout dogLayout = (LinearLayout) findViewById(R.id.linearBeers);
-            dogLayout.addView(messageView);
+//            TextView messageView = new TextView(MainActivity.this);
+//            messageView.setText(result);
+//            LinearLayout dogLayout = (LinearLayout) findViewById(R.id.linearBeers);
+//            dogLayout.addView(messageView);
 
         }
 
 
 
-        // creates "small animal" objects which consist of the image
-        // and other info about a small
-//        public void createSmall(JSONObject small){
-//
-//            // Creates objects for dogs
-//            ImageView image = new ImageView(DogActivity.this);
-//            TextView status = new TextView(DogActivity.this);
-//            TextView name = new TextView(DogActivity.this);
-//            TextView breed = new TextView(DogActivity.this);
-//            TextView age = new TextView(DogActivity.this);
-//            TextView sex = new TextView(DogActivity.this);
-//            TextView id = new TextView(DogActivity.this);
-//
-//
-//            try {
+        // creates "beer" objects which consist of the image
+        // and other info about a beer
+        public void createBeer(JSONObject beer){
+
+            // Creates objects for beers
+//            ImageView image = new ImageView(MainActivity.this);
+
+            TextView name = new TextView(MainActivity.this);
+            TextView style = new TextView(MainActivity.this);
+            TextView abv = new TextView(MainActivity.this);
+
+
+
+            try {
 //                // Gets strings from JSON Array (See onPostExecute)
 //                // Converts image url into base64
 //                byte[] decodedString = Base64.decode(small.getString("image"), Base64.DEFAULT);
 //                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 //                image.setImageBitmap(decodedByte);
-//
-//                status.setText(small.getString("status").toUpperCase());
-//                name.setText("Name: " + small.getString("name"));
-//                breed.setText("Breed: " + small.getString("breed") + " " + small.getString("pedigree"));
-//                age.setText("Age: " + small.getString("age"));
-//                sex.setText("Sex: " + small.getString("sex"));
-//                id.setText("ID: " + small.getString("code"));
-//
-//
-//                name.setTextColor(Color.parseColor("#000000"));
-//                breed.setTextColor(Color.parseColor("#000000"));
-//                age.setTextColor(Color.parseColor("#000000"));
-//                sex.setTextColor(Color.parseColor("#000000"));
-//                id.setTextColor(Color.parseColor("#000000"));
-//
-//                //add formatting
+
+
+
+                name.setText(beer.getString("name"));
+                style.setText(beer.getString("sex"));
+                abv.setText("ABV: " + beer.getString("code"));
+
+
+                name.setTextColor(Color.parseColor("#000000"));
+                style.setTextColor(Color.parseColor("#000000"));
+                abv.setTextColor(Color.parseColor("#000000"));
+
+                //add formatting
 //                id.setPadding(0, 0, 0, 75);
-//
-//                //image formatting
+
+                //image formatting
 //                image.setMaxWidth(550);
 //                image.setMaxHeight(550);
 //                image.setPadding(0, 75, 0, 0);
-//
-//                //text formatting
-//                status.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//                name.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//                breed.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//                age.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//                sex.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//                id.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-//
-//                //status formatting
-//                status.setTextSize(20);
-//                if (small.getString("status").toLowerCase().equals("on hold")){
-//                    status.setTextColor(Color.parseColor("#303F9F"));
-//                } else {
-//                    status.setTextColor(Color.parseColor("#EF8200"));
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//            // Creates views for each small animal
-//            LinearLayout smalls = (LinearLayout) findViewById(R.id.linearDogs);
-//            smalls.addView(image);
-//            smalls.addView(status);
-//            smalls.addView(name);
-//            smalls.addView(breed);
-//            smalls.addView(age);
-//            smalls.addView(sex);
-//            smalls.addView(id);
-//        }
+
+                //text formatting
+                name.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                style.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                abv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+
+
+                //status formatting
+                name.setTextSize(20);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            // Creates views for each small animal
+            LinearLayout beers = (LinearLayout) findViewById(R.id.linearBeers);
+//            beers.addView(image);
+            beers.addView(name);
+            beers.addView(style);
+            beers.addView(abv);
+        }
     }
 }
