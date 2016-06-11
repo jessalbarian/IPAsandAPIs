@@ -5,12 +5,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,37 +49,47 @@ public class MainActivity extends AppCompatActivity {
 
             } catch (JSONException e) {
                 e.printStackTrace();
-//                TextView messageView = new TextView(MainActivity.this);
-////                JSONObject item = jArray.getJSONObject(0);
-//
-////                messageView.setText(item.toString());
-//                messageView.setText("lol2");
-//                LinearLayout dogLayout = (LinearLayout) findViewById(R.id.linearBeers);
-//                dogLayout.addView(messageView);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-
         }
 
 
 
         // creates "beer" objects which consist of the image
         // and other info about a beer
-        public void createBeer(JSONObject beer){
+        public void createBeer(JSONObject beer) throws JSONException, IOException {
 
             // Creates objects for beers
-//            ImageView image = new ImageView(MainActivity.this);
+            ImageView image = new ImageView(MainActivity.this);
 
             TextView name = new TextView(MainActivity.this);
             TextView style = new TextView(MainActivity.this);
             TextView abv = new TextView(MainActivity.this);
 
 
+//            JSONObject imageDict = new JSONObject(beer.getString("label_image"));
+//            String meow = (String) imageDict.getString("original");
+//                URL url = new URL(meow);
 
-            try {
+//            URL url = new URL("http://techlovejump.com/wp-content/uploads/load-image-url-android.jpg");
+//            InputStream is = url.openConnection().getInputStream();
+//            Bitmap bitmap = BitmapFactory.decodeStream(is);
+
+
+//                Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(meow).getContent());
+//            image.setImageBitmap(bitmap);
+
+////                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+////                Bitmap bmp = BitmapFactory.decodeStream((InputStream)new URL(meow).getContent());
+//                Bitmap bmp = BitmapFactory.decodeStream(new java.net.URL(meow).openStream());
+////                image.setImageBitmap(bmp);
+
+
                 name.setText(beer.getString("name"));
+//                name.setText(imageDict.getString("original"));
                 style.setText(beer.getString("style"));
-                abv.setText("ABV: " + beer.getString("abv"));
+                abv.setText("ABV: " + beer.getString("abv") + "%");
 
 
                 name.setTextColor(Color.parseColor("#000000"));
@@ -84,32 +97,48 @@ public class MainActivity extends AppCompatActivity {
                 abv.setTextColor(Color.parseColor("#000000"));
 
                 //add formatting
-//                id.setPadding(0, 0, 0, 75);
+                abv.setPadding(0, 0, 0, 100);
 
                 //image formatting
-//                image.setMaxWidth(550);
-//                image.setMaxHeight(550);
-//                image.setPadding(0, 75, 0, 0);
+                image.setMaxWidth(550);
+                image.setMaxHeight(550);
+                image.setPadding(0, 75, 0, 0);
 
                 //text formatting
-                name.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-                style.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
-                abv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+                name.setGravity(Gravity.CENTER_VERTICAL);
+                style.setGravity(Gravity.CENTER_VERTICAL);
+                abv.setGravity(Gravity.CENTER_VERTICAL);
 
 
                 //status formatting
                 name.setTextSize(20);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
             // Creates views for each small animal
             LinearLayout beers = (LinearLayout) findViewById(R.id.linearBeers);
-//            beers.addView(image);
-            beers.addView(name);
-            beers.addView(style);
-            beers.addView(abv);
+
+            LinearLayout horiz = new LinearLayout(MainActivity.this);
+            horiz.setOrientation(LinearLayout.HORIZONTAL);
+
+            LinearLayout vert = new LinearLayout(MainActivity.this);
+            vert.setOrientation(LinearLayout.VERTICAL);
+
+//            Beer type;
+////            int num = (Integer)getIntent().getExtras().get("myid");
+//
+//            if (beer.getString("name").equals("Ellies Brown")){
+//                type = Beer.ellies_brown[0];
+//                image.setImageResource(type.getImageResourceID());
+//            }
+
+            horiz.addView(image);
+            vert.addView(name);
+            vert.addView(style);
+            vert.addView(abv);
+            horiz.addView(vert);
+
+//            beers.addView(vert);
+            beers.addView(horiz);
         }
     }
 }
