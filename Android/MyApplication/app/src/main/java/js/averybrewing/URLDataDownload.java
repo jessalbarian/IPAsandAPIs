@@ -53,6 +53,9 @@ public abstract class URLDataDownload extends AsyncTask<String, String, Void> {
             URLConnection urlConnection = url.openConnection();
             inputStream = new BufferedInputStream(urlConnection.getInputStream());
             result = new String(ByteStreams.toByteArray(inputStream), Charsets.UTF_8); //using Guava ByteStreams
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -65,4 +68,6 @@ public abstract class URLDataDownload extends AsyncTask<String, String, Void> {
         }
         return null;
     }
+
+
 }

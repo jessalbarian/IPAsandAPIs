@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +28,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         new URLDataDownloadBeer().execute("http://apis.mondorobot.com/beers?");
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//
+        StrictMode.setThreadPolicy(policy);
     }
 
 
@@ -82,32 +85,49 @@ public class MainActivity extends Activity {
 
         // creates "beer" objects which consist of the image
         // and other info about a beer
-        public void createBeer(JSONObject beer) throws JSONException, IOException {
+        public void createBeer(final JSONObject beer) throws JSONException, IOException {
 
             // Creates objects for beers
-            ImageView image = new ImageView(MainActivity.this);
+            final ImageView image = new ImageView(MainActivity.this);
 
             final TextView name = new TextView(MainActivity.this);
             TextView style = new TextView(MainActivity.this);
             TextView abv = new TextView(MainActivity.this);
 
+//            Thread thread = new Thread(new Runnable()
+//            {
+//                @Override
+//                public void run()
+//                {
+//                    try
+//                    {
+//                        JSONObject imageDict = new JSONObject(beer.getString("label_image"));
+//                        String meow = (String) imageDict.getString("desktop");
+//
+//                        URL url = new URL(meow);
+//                        Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+////                        image.setImageBitmap(bmp);
+//                        image.setImageResource(R.drawable.ellies_brown);
+//                    }
+//                    catch (Exception e)
+//                    {
+//                        System.out.println("FAILURE SWISH, FAILURE");
+//                        image.setImageResource(R.drawable.ellies_brown);
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//            thread.start();
 
-//            JSONObject imageDict = new JSONObject(beer.getString("label_image"));
-//            String meow = (String) imageDict.getString("original");
+            JSONObject imageDict = new JSONObject(beer.getString("label_image"));
+                        String meow = (String) imageDict.getString("desktop");
+
+
+//
 //                URL url = new URL(meow);
-
-//            URL url = new URL("http://techlovejump.com/wp-content/uploads/load-image-url-android.jpg");
-//            InputStream is = url.openConnection().getInputStream();
-//            Bitmap bitmap = BitmapFactory.decodeStream(is);
-
-
-//                Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(meow).getContent());
-//            image.setImageBitmap(bitmap);
-
-////                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-////                Bitmap bmp = BitmapFactory.decodeStream((InputStream)new URL(meow).getContent());
-//                Bitmap bmp = BitmapFactory.decodeStream(new java.net.URL(meow).openStream());
-////                image.setImageBitmap(bmp);
+//                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+//                image.setImageBitmap(bmp);
 
                 final String myname = beer.getString("name");
                 final String mystyle = beer.getString("style");
@@ -115,9 +135,21 @@ public class MainActivity extends Activity {
                 final String mypriceperglass = beer.getString("price_per_glass");
                 final String mypricepergrowl = beer.getString("price_per_growler");
 
+
+
                 name.setText(beer.getString("name"));
                 style.setText(beer.getString("style"));
                 abv.setText("ABV: " + beer.getString("abv") + "%");
+
+
+
+            String imageName = myname.toLowerCase().replace(' ', '_').replace("\'", "").replace(":", "").replace("!", "").replace("[","").replace("]", "").replace("-", "_");
+            if(getResources().getIdentifier(imageName,"drawable","js.averybrewing")!=0){
+                image.setImageResource(getResources().getIdentifier(imageName,"drawable","js.averybrewing"));
+            }
+            else {
+                image.setImageResource(R.drawable.logo);
+            }
 
 
                 name.setTextColor(Color.parseColor("#000000"));
@@ -131,14 +163,19 @@ public class MainActivity extends Activity {
 
 
                 //image formatting
-                image.setMaxWidth(550);
-                image.setMaxHeight(550);
-                image.setPadding(0, 75, 0, 0);
+//            image.requestLayout();
+//                    image.getLayoutParams().height = 20;
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
+            image.setLayoutParams(layoutParams);
+                    image.setPadding(25, 0, 0, 0);
+
+
 
                 //text formatting
                 name.setGravity(Gravity.CENTER_VERTICAL);
                 style.setGravity(Gravity.CENTER_VERTICAL);
                 abv.setGravity(Gravity.CENTER_VERTICAL);
+
 
 
                 //status formatting
@@ -166,6 +203,7 @@ public class MainActivity extends Activity {
                     intent.putExtra("abv", myabv);
                     intent.putExtra("price_per_glass" , mypriceperglass);
                     intent.putExtra("price_per_growler", mypricepergrowl);
+//                    intent.putExtra("image", myimage);
                     startActivity(intent);
                 }
 
