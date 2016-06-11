@@ -59,12 +59,13 @@ public class BeerActivity extends Activity {
         growlerText.setText("Growler Price: $" + ppgr);
 //        image.setImageBitmap(bmp);
 
-        String imageName = name.toLowerCase().replace(' ', '_').replace("\'", "").replace(":", "").replace("!", "").replace("[","").replace("]", "").replace("-", "_");
+//        String imageName = name.toLowerCase().replace(' ', '_').replace("\'", "").replace(":", "").replace("!", "").replace("[","").replace("]", "").replace("-", "_");
+        String imageName = name.toLowerCase().replace(' ', '_').replace("\'", "");
         if(getResources().getIdentifier(imageName,"drawable","js.averybrewing")!=0){
             image.setImageResource(getResources().getIdentifier(imageName,"drawable","js.averybrewing"));
         }
         else {
-            image.setImageResource(R.drawable.logo);
+            image.setImageResource(R.drawable.logo2);
         }
 
 
