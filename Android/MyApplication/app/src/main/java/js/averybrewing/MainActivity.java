@@ -36,19 +36,25 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void v) {
             progressDialog.dismiss();
             try {
-                JSONArray jArray = new JSONArray(result);
+
+                JSONArray jArray = new JSONArray(new JSONObject(result).getString("beers"));
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject beer = jArray.getJSONObject(i);
                     createBeer(beer);
                 }
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
+//                TextView messageView = new TextView(MainActivity.this);
+////                JSONObject item = jArray.getJSONObject(0);
+//
+////                messageView.setText(item.toString());
+//                messageView.setText("lol2");
+//                LinearLayout dogLayout = (LinearLayout) findViewById(R.id.linearBeers);
+//                dogLayout.addView(messageView);
             }
-            // Test: prints entire JSON
-//            TextView messageView = new TextView(MainActivity.this);
-//            messageView.setText(result);
-//            LinearLayout dogLayout = (LinearLayout) findViewById(R.id.linearBeers);
-//            dogLayout.addView(messageView);
+
 
         }
 
@@ -68,17 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
 
             try {
-//                // Gets strings from JSON Array (See onPostExecute)
-//                // Converts image url into base64
-//                byte[] decodedString = Base64.decode(small.getString("image"), Base64.DEFAULT);
-//                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-//                image.setImageBitmap(decodedByte);
-
-
-
                 name.setText(beer.getString("name"));
-                style.setText(beer.getString("sex"));
-                abv.setText("ABV: " + beer.getString("code"));
+                style.setText(beer.getString("style"));
+                abv.setText("ABV: " + beer.getString("abv"));
 
 
                 name.setTextColor(Color.parseColor("#000000"));
