@@ -12,8 +12,7 @@
     android:clickable="true"
     android:linksClickable="true"
     android:background="@drawable/background"
-    android:scaleType="fitCenter"
-    android:adjustViewBounds="true">
+    android:scaleType="fitXY">
 
 
     <ScrollView

@@ -2,9 +2,12 @@ package js.averybrewing;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -71,7 +74,7 @@ public class EventActivity extends Activity {
             TextView description = new TextView(EventActivity.this);
             TextView location = new TextView(EventActivity.this);
             TextView starts_at = new TextView(EventActivity.this);
-            TextView ticket_url = new TextView(EventActivity.this);
+            final TextView ticket_url = new TextView(EventActivity.this);
 
 
             final String mytitle = event.getString("title");
@@ -84,25 +87,22 @@ public class EventActivity extends Activity {
             // Default time zone.
             DateTime dateTime = new DateTime(mystarts_at);
 
-
             // Output in localized format.
             DateTimeFormatter formatter = DateTimeFormat.shortDateTime().withLocale( Locale.US );
             String output_US = formatter.print(dateTime);
-
             title.setText(event.getString("title"));
             description.setText(event.getString("description"));
             location.setText("Where: " + event.getString("location"));
-            starts_at.setText(event.getString(output_US));
-            if (event.getString("ticket_url") != null) {
-                ticket_url.setText(event.getString("ticket_url"));
+            starts_at.setText("When: " + output_US);
+            if (!event.getString("ticket_url").isEmpty()) {
+                ticket_url.setText("Get Tickets");
             }
-
 
             title.setTextColor(Color.parseColor("#000000"));
             description.setTextColor(Color.parseColor("#000000"));
             location.setTextColor(Color.parseColor("#000000"));
             starts_at.setTextColor(Color.parseColor("#000000"));
-            ticket_url.setTextColor(Color.parseColor("#000000"));
+            ticket_url.setTextColor(Color.parseColor("#a30000"));
 
             //add formatting
 
@@ -110,12 +110,23 @@ public class EventActivity extends Activity {
             description.setPadding(50, 0, 0, 25);
             location.setPadding(50, 0, 0, 25);
             starts_at.setPadding(50, 0, 0, 25);
-            ticket_url.setPadding(50, 0, 0, 250);
+            ticket_url.setPadding(50, 0, 0, 50);
+            image.setPadding(0,0,0,150);
+
+            ticket_url.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(myticket_url));
+                    startActivity(browserIntent);
+                }
+
+            });
 
             //image formatting
-            image.setMaxWidth(550);
-            image.setMaxHeight(550);
-            image.setPadding(0, 75, 0, 0);
+//            image.setMaxWidth(550);
+//            image.setMaxHeight(550);
+//            image.setPadding(0, 75, 0, 0);
 
             //text formatting
             title.setGravity(Gravity.CENTER_VERTICAL);
@@ -130,6 +141,7 @@ public class EventActivity extends Activity {
             location.setTextSize(20);
             starts_at.setTextSize(20);
 
+            image.setImageResource(R.drawable.smalldiv);
 
             // Creates views for each small animal
             LinearLayout beers = (LinearLayout) findViewById(R.id.linearBeers);
@@ -202,14 +214,14 @@ public class EventActivity extends Activity {
 //
 //            });
 
-            horiz.addView(image);
+//            horiz.addView(image);
 
             vert.addView(title);
             vert.addView(description);
             vert.addView(location);
             vert.addView(starts_at);
             vert.addView(ticket_url);
-
+            vert.addView(image);
             horiz.addView(vert);
 
 //            beers.addView(vert);
