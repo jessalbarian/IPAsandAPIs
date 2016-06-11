@@ -1,10 +1,12 @@
 package js.averybrewing;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         new URLDataDownloadBeer().execute("http://apis.mondorobot.com/beers?");
+
     }
+
+
+
 
 
 
@@ -55,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         // creates "beer" objects which consist of the image
         // and other info about a beer
         public void createBeer(JSONObject beer) throws JSONException, IOException {
@@ -63,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             // Creates objects for beers
             ImageView image = new ImageView(MainActivity.this);
 
-            TextView name = new TextView(MainActivity.this);
+            final TextView name = new TextView(MainActivity.this);
             TextView style = new TextView(MainActivity.this);
             TextView abv = new TextView(MainActivity.this);
 
@@ -85,9 +90,13 @@ public class MainActivity extends AppCompatActivity {
 //                Bitmap bmp = BitmapFactory.decodeStream(new java.net.URL(meow).openStream());
 ////                image.setImageBitmap(bmp);
 
+                final String myname = beer.getString("name");
+                final String mystyle = beer.getString("style");
+                final String myabv = beer.getString("abv");
+                final String mypriceperglass = beer.getString("price_per_glass");
+                final String mypricepergrowl = beer.getString("price_per_growler");
 
                 name.setText(beer.getString("name"));
-//                name.setText(imageDict.getString("original"));
                 style.setText(beer.getString("style"));
                 abv.setText("ABV: " + beer.getString("abv") + "%");
 
@@ -97,7 +106,10 @@ public class MainActivity extends AppCompatActivity {
                 abv.setTextColor(Color.parseColor("#000000"));
 
                 //add formatting
-                abv.setPadding(0, 0, 0, 100);
+                abv.setPadding(50, 0, 0, 100);
+                name.setPadding(50, 0, 0, 0);
+                style.setPadding(50, 0, 0, 0);
+
 
                 //image formatting
                 image.setMaxWidth(550);
@@ -123,6 +135,23 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout vert = new LinearLayout(MainActivity.this);
             vert.setOrientation(LinearLayout.VERTICAL);
 
+
+//            assert beers != null;
+            horiz.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+                    intent.putExtra("name", myname);
+                    intent.putExtra("style", mystyle);
+                    intent.putExtra("abv", myabv);
+                    intent.putExtra("price_per_glass" , mypriceperglass);
+                    intent.putExtra("price_per_growler", mypricepergrowl);
+                    startActivity(intent);
+                }
+
+            });
+
 //            Beer type;
 ////            int num = (Integer)getIntent().getExtras().get("myid");
 //
@@ -130,6 +159,43 @@ public class MainActivity extends AppCompatActivity {
 //                type = Beer.ellies_brown[0];
 //                image.setImageResource(type.getImageResourceID());
 //            }
+
+//            image.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            });
+//            name.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            });
+//            style.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            });
+//            abv.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            });
 
             horiz.addView(image);
             vert.addView(name);

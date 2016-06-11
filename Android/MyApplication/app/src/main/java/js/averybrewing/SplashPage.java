@@ -24,7 +24,7 @@ public class SplashPage extends AppCompatActivity {
                     startActivity(new Intent(SplashPage.this, MainActivity.class));
                     finish();
                 }
-            }, secondsDelayed * 1500);
+            }, secondsDelayed * 2000);
 
             splashLoaded = true;
         }
