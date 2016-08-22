@@ -2,8 +2,8 @@
 
 Our hack for Avery's IPAs and APIs Hackathon
 
-![screenshot](screenshot1.png)
+<img src="https://github.com/jessalbarian/IPAsandAPIs/blob/master/screenshot1.png" width="48">
 
-![screenshot](screenshot2.png)
+<img src="https://github.com/jessalbarian/IPAsandAPIs/blob/master/screenshot2.png" width="48">
 
-![screenshot](screenshot3.png)
+<img src="https://github.com/jessalbarian/IPAsandAPIs/blob/master/screenshot3.png" width="48">
