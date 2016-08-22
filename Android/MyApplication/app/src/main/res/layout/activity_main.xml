@@ -8,10 +8,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     tools:context="js.averybrewing.MainActivity"
-    android:orientation="vertical"
-    android:background="@drawable/background2"
-    android:scaleType="centerCrop"
-    android:adjustViewBounds="true">
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"

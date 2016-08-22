@@ -87,6 +87,7 @@ public class BeerActivity extends Activity {
         glassText.setTextSize(20);
         growlerText.setTextSize(20);
 
+        image.setPadding(0, 150, 0, 0);
 
         assert beer != null;
         beer.addView(image);

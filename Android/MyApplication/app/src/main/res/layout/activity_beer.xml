@@ -9,8 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="js.averybrewing.BeerActivity"
     android:id="@+id/linearBeers"
-    android:orientation="vertical"
-    android:background="@drawable/background2"
-    android:scaleType="fitXY">
+    android:orientation="vertical">
 
 </LinearLayout>

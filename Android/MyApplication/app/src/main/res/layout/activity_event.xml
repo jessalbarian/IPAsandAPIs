@@ -10,11 +10,7 @@
     tools:context="js.averybrewing.EventActivity"
     android:autoLink="web"
     android:clickable="true"
-    android:linksClickable="true"
-    android:background="@drawable/background"
-    android:scaleType="centerCrop"
-    android:adjustViewBounds="true"
-    android:layout_centerInParent="true">
+    android:linksClickable="true">
 
     <ScrollView
         android:layout_width="match_parent"
